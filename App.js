@@ -67,18 +67,24 @@ const App = () => {
     '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
     '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
 
-  const [BgList, setBgList] = useState(styles.bgfy);
+  const [BgList, setBgList] = useState('');
 
   const onPressFunction = () => {
+    console.log('**** color ****');
     const random = Math.floor(Math.random() * bgColorList.length);
     setBgList(bgColorList[random]);
     console.log('**** color ****', bgColorList[random]);
+
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Hello Native</Text>
-      <Button title="Click Me" color={BgList} onPress={onPressFunction} />
+      <Button
+        title={BgList ? BgList : 'Click Me'}
+        color={BgList}
+        onPress={onPressFunction}
+      />
     </View>
   );
 };
