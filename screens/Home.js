@@ -44,41 +44,10 @@ const Home = () => {
                 setFamilyMovies(familyMoviesData);
                 setDocumentaryMovies(documentaryMoviesData);
             }
-        ).catch(err => {
-            setError(err);
-        })
-
-        // getUpcomingMovies().then(movies => {
-        //     const moviesImagesArray = [];
-        //     movies.forEach(item => {
-        //         moviesImagesArray.push('https://image.tmdb.org/t/p/w500' + item.poster_path)
-        //     });
-        //     setMoviesImages(moviesImagesArray);
-        // })
-
-        // getPopularMovies().then(movies => {
-        //     setPopularMovies(movies)
-        // }).catch(err => {
-        //     setError(err);
-        // });
-
-        // getPopularTv().then(movies => {
-        //     setPopularTv(movies)
-        // }).catch(err => {
-        //     setError(err);
-        // });
-
-        // getFamilyMovies().then(movies => {
-        //     setFamilyMovies(movies)
-        // }).catch(err => {
-        //     setError(err);
-        // });
-
-        // getDocumentaryMovies().then(movies => {
-        //     setDocumentaryMovies(movies)
-        // }).catch(err => {
-        //     setError(err);
-        // });
+        ).catch(
+            err => {
+                setError(err);
+            })
 
     }, [])
 
