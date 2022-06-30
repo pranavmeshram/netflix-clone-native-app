@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
 
 List.propTypes = {
     title: PropTypes.string,
-    content: PropTypes.object,
+    content: PropTypes.array,
 };
 
 export default List;
