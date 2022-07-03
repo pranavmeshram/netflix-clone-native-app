@@ -7,12 +7,12 @@ const placeholderImage = require("../assets/img/placeholder-img.png");
 class Card extends React.PureComponent {
 
     render() {
-        const { item } = this.props;
+        const { item, navigation } = this.props;
 
         return (
             <TouchableOpacity
                 style={styles.container}
-            //   onPress={this.onPress}
+                onPress={() => navigation.navigate('Detail Screen')}
             >
                 <Image
                     resizeMode="cover"
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
 
 Card.propTypes = {
     item: PropTypes.object,
+    navigation: PropTypes.object,
 };
 
 export default Card;

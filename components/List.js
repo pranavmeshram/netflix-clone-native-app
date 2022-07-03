@@ -7,10 +7,10 @@ import Card from './Card';
 class List extends React.PureComponent {
 
     render() {
-        const { title, content } = this.props;
+        const { title, content, navigation } = this.props;
 
         const renderItem = ({ item }) => (
-            <Card item={item} />
+            <Card item={item} navigation={navigation} />
         );
 
         return (
@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
 List.propTypes = {
     title: PropTypes.string,
     content: PropTypes.array,
+    navigation: PropTypes.object,
 };
 
 export default List;
