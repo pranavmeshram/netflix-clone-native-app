@@ -12,7 +12,7 @@ class Card extends React.PureComponent {
         return (
             <TouchableOpacity
                 style={styles.container}
-                onPress={() => navigation.navigate('Detail Screen')}
+                onPress={() => navigation.navigate('Detail Screen', { detailId: item.id })}
             >
                 <Image
                     resizeMode="cover"
