@@ -41,7 +41,7 @@ const MovieDetails = ({ route, navigation }) => {
             {isLoading && !error
                 ? <ActivityIndicator size="large" color="#2b2d42" />
                 :
-                <ScrollView>
+                <ScrollView decelerationRate="normal">
 
                     <Image
                         resizeMode="stretch"
@@ -54,6 +54,18 @@ const MovieDetails = ({ route, navigation }) => {
                     />
                     <View style={styles.container}>
                         <Text style={styles.movieTitle}>{screenDetail?.title}</Text>
+                        {screenDetail.genres && (
+                            <View style={styles.genresContainer}>
+                                {screenDetail.genres.map(genre => {
+                                    return (
+                                        <Text key={genre.id} style={styles.genreText}>
+                                            {genre.name}
+                                        </Text>
+                                    )
+                                })}
+
+                            </View>
+                        )}
                     </View>
 
                 </ScrollView>
@@ -79,8 +91,17 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         fontSize: 24,
         fontWeight: "bold",
-        color: "#000"
-
+        color: "#000",
+    },
+    genresContainer: {
+        flexDirection: "row",
+        alignContent: "center",
+        marginTop: 20,
+    },
+    genreText: {
+        marginRight: 10,
+        fontWeight: "bold",
+        color: "#000",
     },
 
 
