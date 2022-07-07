@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, Dimensions, ActivityIndicator } from 'react-native';
+import StarRating from 'react-native-star-rating';
+import dateFormat from 'dateformat';
 import { getDetails } from '../services/services';
 import Error from '../components/Error';
 
@@ -36,6 +38,8 @@ const MovieDetails = ({ route, navigation }) => {
 
     }, [detailId]);
 
+    console.log("screenDetail2", screenDetail);
+
     return (
         <React.Fragment>
             {isLoading && !error
@@ -66,6 +70,19 @@ const MovieDetails = ({ route, navigation }) => {
 
                             </View>
                         )}
+                        <StarRating
+                            disabled={false}
+                            maxStars={5}
+                            starSize={30}
+                            rating={screenDetail.vote_average / 2}
+                            fullStarColor={'gold'}
+                        />
+                        <Text style={styles.overview}>
+                            {screenDetail.overview}
+                        </Text>
+                        <Text style={styles.releaseDate}>
+                            {"Release date: " + dateFormat(screenDetail.release_date, "dS, mmm, yyyy")}
+                        </Text>
                     </View>
 
                 </ScrollView>
@@ -82,6 +99,7 @@ const styles = StyleSheet.create({
         flex: 2,
         justifyContent: "center",
         alignItems: "center",
+        marginBottom: 40,
     },
     movieImg: {
         height: height / 1.8,
@@ -103,6 +121,14 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         color: "#000",
     },
+    overview: {
+        padding: 15,
+        color: "#000",
+    },
+    releaseDate: {
+        fontWeight: "bold",
+        color: "#000",
+    }
 
 
 });

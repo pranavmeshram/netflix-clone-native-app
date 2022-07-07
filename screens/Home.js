@@ -84,7 +84,7 @@ const Home = ({ navigation }) => {
                     {/* popularMoviesData */}
                     {popularMovies && (
                         <View style={styles.carousel}>
-                            <List title="Popular Movies" content={popularMovies} navigation={navigation} />
+                            <List style={styles.carouselTitleText} title="Popular Movies" content={popularMovies} navigation={navigation} />
                         </View>
                     )}
 
@@ -133,6 +133,9 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
+    carouselTitleText: {
+        paddingeft: 15,
+    }
 });
 
 export default Home;

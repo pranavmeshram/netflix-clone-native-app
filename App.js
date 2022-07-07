@@ -7,6 +7,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  const x = 'hello';
+  console.log(x);
 
   return (
     <NavigationContainer>
