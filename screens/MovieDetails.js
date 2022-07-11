@@ -5,7 +5,7 @@ import dateFormat from 'dateformat';
 import { getDetails } from '../services/services';
 import Error from '../components/Error';
 import PlayButton from '../components/PlayButton';
-
+import PlayVideo from '../components/PlayVideo';
 
 const placeholderImage = require("../assets/img/placeholder-img.png");
 
@@ -90,6 +90,7 @@ const MovieDetails = ({ route, navigation }) => {
                                 starSize={30}
                                 rating={screenDetail.vote_average / 2}
                                 fullStarColor={'gold'}
+                                starStyle={styles.rating}
                             />
                             <Text style={styles.overview}>
                                 {screenDetail.overview}
@@ -102,17 +103,14 @@ const MovieDetails = ({ route, navigation }) => {
                     </ScrollView>
                 }
 
-                <Modal
-                    animationType="slide"
-                    visible={modalVisible}
-                // visible={true}
-                >
+                <Modal animationType="slide" visible={modalVisible} supportedOrientations={['portrait', 'landscape']}>
+
                     <View style={styles.videoModelContainer}>
                         <Pressable onPress={videoShown}>
                             <Text>Close Me</Text>
                         </Pressable>
+                        {/* <PlayVideo onClose={videoShown} /> */}
                     </View>
-
 
                 </Modal>
             </View>
@@ -134,8 +132,8 @@ const styles = StyleSheet.create({
         height: height / 1.8,
     },
     movieTitle: {
-        marginTop: 15,
-        marginBottom: 10,
+        marginTop: 25,
+        marginBottom: 5,
         fontSize: 24,
         fontWeight: "bold",
         color: "#000",
@@ -144,12 +142,15 @@ const styles = StyleSheet.create({
     genresContainer: {
         flexDirection: "row",
         alignContent: "center",
-        marginTop: 20,
+        marginTop: 10,
     },
     genreText: {
         marginRight: 10,
         fontWeight: "bold",
         color: "#000",
+    },
+    rating: {
+        marginTop: 10,
     },
     overview: {
         padding: 15,

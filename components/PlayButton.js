@@ -9,7 +9,7 @@ class PlayButton extends PureComponent {
 
         return (
             <Pressable onPress={handlePress} style={styles.playButton}>
-                <Icon name={"caret-forward-outline"} size={15} color={"#fff"} />
+                <Icon name={"caret-forward-outline"} size={30} color={"#fff"} />
             </Pressable>
         )
     }
@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
     playButton: {
         alignContent: "center",
         borderRadius: 50,
-        width: 38,
-        padding: 8,
+        width: 50,
+        padding: 10,
         backgroundColor: "#4481FC"
     },
 });
