@@ -106,10 +106,10 @@ const MovieDetails = ({ route, navigation }) => {
                 <Modal animationType="slide" visible={modalVisible} supportedOrientations={['portrait', 'landscape']}>
 
                     <View style={styles.videoModelContainer}>
-                        <Pressable onPress={videoShown}>
+                        {/* <Pressable onPress={videoShown}>
                             <Text>Close Me</Text>
-                        </Pressable>
-                        {/* <PlayVideo onClose={videoShown} /> */}
+                        </Pressable> */}
+                        <PlayVideo onClose={videoShown} />
                     </View>
 
                 </Modal>
