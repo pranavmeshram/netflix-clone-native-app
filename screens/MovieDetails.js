@@ -85,12 +85,12 @@ const MovieDetails = ({ route, navigation }) => {
                                 </View>
                             )}
                             <StarRating
+                                starStyle={styles.rating}
                                 disabled={false}
                                 maxStars={5}
                                 starSize={30}
                                 rating={screenDetail.vote_average / 2}
                                 fullStarColor={'gold'}
-                                starStyle={styles.rating}
                             />
                             <Text style={styles.overview}>
                                 {screenDetail.overview}
@@ -156,10 +156,12 @@ const styles = StyleSheet.create({
         padding: 15,
         color: "#000",
         textAlign: "justify",
+        letterSpacing: 1,
     },
     releaseDate: {
         fontWeight: "bold",
         color: "#000",
+        letterSpacing: 1,
     },
     playButtonContainer: {
         position: 'absolute',
